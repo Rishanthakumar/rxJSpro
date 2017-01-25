@@ -1,5 +1,12 @@
 import {Observable, Observer} from 'rxjs';
 
+** if you import rxjs this way, file size of the app.js will be high but instead you can import specific functions.
+**    like eg:
+**        import {Observable} from "rxjs";
+**        import "rxjs/add/operator/map";
+**        import "rxjs/add/operator/filter";
+
+
 let numbers = [1, 5, 10];
 let source = Observable.from(numbers);
 

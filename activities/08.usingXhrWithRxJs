@@ -27,10 +27,18 @@ function renderMovies(movies) {
         output.appendChild(div);
     });
 }
+//
+//  using map you map the observable to one and another observable.
+// click.map(e => load('movies.json'))
+//     .subscribe(o => console.log(o));
+//
+//flat map will subscribe to the observable and deliver the final output.
+// click.flatMap(e => load('movies.json'))
+//     .subscribe(o => console.log(o));
 
 click.flatMap(e => load('movies.json'))
     .subscribe(
-        renderMovies,
-        e => console.log(`error: ${e}`),
-        () => console.log('complete')
-    );
+    renderMovies,
+    e => console.log(`error: ${e}`),
+    () => console.log('complete')
+);
